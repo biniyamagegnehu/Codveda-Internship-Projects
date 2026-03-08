@@ -1,0 +1,630 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ethiopian Colors:
+   Green: #078930
+   Yellow: #FCDD09
+   Red: #DA121A
+*/
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Top Bar Styles */
+.top-bar {
+    background-color: #078930;  /* Ethiopian green */
+    color: white;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info span {
+    margin-right: 20px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #FCDD09;  /* Ethiopian yellow */
+}
+
+/* Header and Navigation Styles */
+header {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* Logo styling */
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #078930;  /* Ethiopian green */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: #DA121A;  /* Ethiopian red */
+}
+
+/* Navigation menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover effect for navigation links */
+.nav-menu li a:hover {
+    color: #DA121A;  /* Ethiopian red */
+}
+
+.nav-menu li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background-color: #FCDD09;  /* Ethiopian yellow */
+}
+
+.nav-menu li a.active {
+    color: #078930;  /* Ethiopian green */
+    font-weight: 600;
+}
+
+.nav-menu li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background-color: #DA121A;  /* Ethiopian red */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: #333;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #DA121A;  /* Ethiopian red */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #078930;  /* Ethiopian green */
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #078930;  /* Ethiopian green */
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #078930, #FCDD09, #DA121A);
+}
+
+/* Culture Highlights Section */
+.culture-highlights {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.cards-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.food-image {
+    background-color: #078930;
+    background-image: linear-gradient(45deg, #078930 30%, #FCDD09 70%);
+}
+
+.clothing-image {
+    background-color: #DA121A;
+    background-image: linear-gradient(45deg, #DA121A 30%, #078930 70%);
+}
+
+.historic-image {
+    background-color: #FCDD09;
+    background-image: linear-gradient(45deg, #FCDD09 30%, #DA121A 70%);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+    color: #078930;
+}
+
+.card-content p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.btn-small {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #078930;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-small:hover {
+    background-color: #DA121A;
+}
+
+/* Coffee Ceremony Section */
+.coffee-ceremony {
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    background-color: #222;
+}
+
+.coffee-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #FCDD09;
+}
+
+.coffee-content p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 18px;
+}
+
+.coffee-steps {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1;
+    min-width: 200px;
+}
+
+.step span {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.step h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #FCDD09;
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item-1 { background-color: #078930; }
+.gallery-item-2 { background-color: #DA121A; }
+.gallery-item-3 { background-color: #FCDD09; }
+.gallery-item-4 { background-color: #078930; }
+.gallery-item-5 { background-color: #DA121A; }
+.gallery-item-6 { background-color: #FCDD09; }
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    color: #FCDD09;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #FCDD09;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-social a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #FCDD09;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+}
+
+/* About Page Styles */
+.page-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x300') no-repeat center center/cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: #333;
+}
+
+.page-hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.about-content {
+    padding: 80px 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+}
+
+.about-text h2 {
+    color: #078930;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.about-text h3 {
+    color: #DA121A;
+    margin: 25px 0 10px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #078930, #FCDD09);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.stat-card h4 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 16px;
+}
+
+/* Contact Page Styles */
+.contact-section {
+    padding: 80px 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+
+.contact-info-side h2 {
+    color: #078930;
+    margin-bottom: 20px;
+}
+
+.contact-info-side p {
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-item span {
+    font-size: 24px;
+}
+
+.contact-form-container {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #078930;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Top Bar */
+    .top-bar .container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .contact-info span {
+        margin: 0 10px;
+    }
+    
+    /* Navigation */
+    .navbar .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    /* Hero */
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    
+    /* Coffee Steps */
+    .coffee-steps {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    /* About Page */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Contact Page */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Hero */
+    .hero {
+        height: 400px;
+    }
+    
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+    }
+    
+    /* Section Titles */
+    .section-title {
+        font-size: 28px;
+    }
+    
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* About Stats */
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Contact Form */
+    .contact-form-container {
+        padding: 20px;
+    }
+}
