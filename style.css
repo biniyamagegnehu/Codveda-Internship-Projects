@@ -131,13 +131,12 @@ header {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-ethiopia.jpg') no-repeat center center/cover;
     height: 500px;
     display: flex;
     align-items: center;
     text-align: center;
     color: white;
-    background-color: #333;
 }
 
 .hero-content {
@@ -224,19 +223,23 @@ header {
     background-position: center;
 }
 
+/* Card Images - Add your images to the images folder */
 .food-image {
-    background-color: #078930;
-    background-image: linear-gradient(45deg, #078930 30%, #FCDD09 70%);
+    background-image: url('images/ethiopian-food.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .clothing-image {
-    background-color: #DA121A;
-    background-image: linear-gradient(45deg, #DA121A 30%, #078930 70%);
+    background-image: url('images/ethiopian-clothing.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .historic-image {
-    background-color: #FCDD09;
-    background-image: linear-gradient(45deg, #FCDD09 30%, #DA121A 70%);
+    background-image: url('images/ethiopian-historic.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .card-content {
@@ -270,11 +273,10 @@ header {
 
 /* Coffee Ceremony Section */
 .coffee-ceremony {
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/ethiopian-coffee.jpg') no-repeat center center/cover;
     color: white;
     padding: 80px 0;
     text-align: center;
-    background-color: #222;
 }
 
 .coffee-content h2 {
@@ -338,12 +340,42 @@ header {
     transform: scale(1.03);
 }
 
-.gallery-item-1 { background-color: #078930; }
-.gallery-item-2 { background-color: #DA121A; }
-.gallery-item-3 { background-color: #FCDD09; }
-.gallery-item-4 { background-color: #078930; }
-.gallery-item-5 { background-color: #DA121A; }
-.gallery-item-6 { background-color: #FCDD09; }
+/* Gallery Images - Add 6 images to your images folder */
+.gallery-item-1 { 
+    background-image: url('images/gallery-1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-item-2 { 
+    background-image: url('images/gallery-2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-item-3 { 
+    background-image: url('images/gallery-3.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-item-4 { 
+    background-image: url('images/gallery-4.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-item-5 { 
+    background-image: url('images/gallery-5.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-item-6 { 
+    background-image: url('images/gallery-6.jpg');
+    background-size: cover;
+    background-position: center;
+}
 
 /* Footer */
 footer {
@@ -406,13 +438,12 @@ footer {
 
 /* About Page Styles */
 .page-hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x300') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-ethiopia.jpg') no-repeat center center/cover;
     height: 300px;
     display: flex;
     align-items: center;
     text-align: center;
     color: white;
-    background-color: #333;
 }
 
 .page-hero h1 {
@@ -573,6 +604,10 @@ footer {
     }
     
     /* Hero */
+    .hero {
+        height: 400px;
+    }
+    
     .hero-content h1 {
         font-size: 36px;
     }
@@ -597,7 +632,7 @@ footer {
 @media (max-width: 480px) {
     /* Hero */
     .hero {
-        height: 400px;
+        height: 350px;
     }
     
     .hero-content h1 {
