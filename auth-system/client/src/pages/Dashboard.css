@@ -1,0 +1,171 @@
+.dashboard {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header h1 {
+  color: #333;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.dashboard-header .logout-btn {
+  width: auto;
+  padding: 12px 24px;
+  background: #e53e3e;
+  margin: 0;
+}
+
+.dashboard-header .logout-btn:hover {
+  background: #c53030;
+}
+
+.dashboard-content {
+  display: grid;
+  gap: 30px;
+}
+
+.welcome-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.welcome-card h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.welcome-card p {
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+.profile-card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card h3 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.profile-info {
+  background: #f8fafc;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.info-row {
+  display: flex;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row strong {
+  width: 100px;
+  color: #555;
+  font-weight: 600;
+}
+
+.info-row span {
+  flex: 1;
+  color: #333;
+  font-size: 16px;
+}
+
+.user-id {
+  font-family: monospace;
+  background: #e2e8f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.token-info {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.token-info h3 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.token-status {
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.token-status.active {
+  background: #c6f6d5;
+  color: #22543d;
+  border: 1px solid #9ae6b4;
+}
+
+.token-note {
+  color: #666;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error-message {
+  color: #e53e3e;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .info-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .info-row strong {
+    width: auto;
+  }
+}
