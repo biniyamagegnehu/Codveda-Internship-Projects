@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide a password'],
     minlength: 6,
-    select: false // Don't return password by default
+    select: false
   },
   createdAt: {
     type: Date,
@@ -30,22 +30,35 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-// Hash password before saving
-userSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) return next();
+// Hash password before saving - Mongoose 7+ style (no next parameter)
+userSchema.pre('save', async function() {
+  // Only hash the password if it's modified (or new)
+  if (!this.isModified('password')) {
+    return;
+  }
   
   try {
+    console.log('Hashing password for user:', this.email);
+    
+    // Generate salt and hash password
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
-    next();
+    
+    console.log('Password hashed successfully');
   } catch (error) {
-    next(error);
+    console.error('Error in password hashing:', error);
+    throw error; // In Mongoose 7+, throw error instead of passing to next()
   }
 });
 
 // Method to compare passwords
 userSchema.methods.comparePassword = async function(candidatePassword) {
-  return await bcrypt.compare(candidatePassword, this.password);
+  try {
+    return await bcrypt.compare(candidatePassword, this.password);
+  } catch (error) {
+    console.error('Password comparison error:', error);
+    throw error;
+  }
 };
 
 module.exports = mongoose.model('User', userSchema);

@@ -31,14 +31,24 @@ const registerUser = async (req, res) => {
     }
 
     // Create new user
-    const user = await User.create({
+    const user = new User({
       name,
       email,
-      password
+      password // Plain password - will be hashed by pre-save middleware
     });
+
+    // Save user to database (this triggers the pre-save middleware)
+    await user.save();
 
     // Generate token
     const token = generateToken(user._id);
+
+    // Log to verify (remove in production)
+    console.log('User created successfully:', {
+      id: user._id,
+      name: user.name,
+      email: user.email
+    });
 
     res.status(201).json({
       _id: user._id,
@@ -49,6 +59,7 @@ const registerUser = async (req, res) => {
     });
 
   } catch (error) {
+    console.error('Registration error:', error);
     res.status(500).json({ 
       message: 'Server error', 
       error: error.message 
@@ -70,7 +81,7 @@ const loginUser = async (req, res) => {
       });
     }
 
-    // Check for user email
+    // Check for user email - explicitly select password field
     const user = await User.findOne({ email }).select('+password');
     
     if (!user) {
@@ -79,9 +90,15 @@ const loginUser = async (req, res) => {
       });
     }
 
+    // Log to check if password is hashed (remove in production)
+    console.log('Stored hashed password:', user.password);
+    console.log('Provided password:', password);
+
     // Check password
     const isPasswordMatch = await user.comparePassword(password);
     
+    console.log('Password match:', isPasswordMatch); // Debug log
+
     if (!isPasswordMatch) {
       return res.status(401).json({ 
         message: 'Invalid email or password' 
@@ -100,6 +117,7 @@ const loginUser = async (req, res) => {
     });
 
   } catch (error) {
+    console.error('Login error:', error);
     res.status(500).json({ 
       message: 'Server error', 
       error: error.message 
